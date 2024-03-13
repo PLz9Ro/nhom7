@@ -20,13 +20,13 @@
 </html>
 <script>
         document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Ngăn chặn form được submit theo cách thông thường
+            event.preventDefault(); 
 
             var username = document.getElementById('username').value;
             var password = document.getElementById('password').value;
 
             if (username === 'admin' && password === 'admin') {
-                // Chuyển hướng đến trang đăng nhập thành công
+              
                 window.location.href = 'login_success.html';
             } else {
                 alert('Tên đăng nhập hoặc mật khẩu không đúng!');
