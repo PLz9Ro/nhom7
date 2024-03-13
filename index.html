@@ -6,10 +6,30 @@
     <title>Document</title>
   </head>
   <body>
-    <label for="txtusername">Tên Đăng Nhập :</label>
-    <input type="text" id="txtusername" name="txtusername" />
-    <label for="txtpassword">Mật Khẩu :</label>
-    <input type="text" id="txtpassword" name="txtpassword" />
-    <button type="submit">Đăng Nhập</button>
+    <form id="loginForm">
+        <label for="username">Tên đăng nhập:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">Mật khẩu:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="submit">Đăng nhập</button>
+    </form>
   </body>
+
 </html>
+<script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Ngăn chặn form được submit theo cách thông thường
+
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            if (username === 'admin' && password === 'admin') {
+                // Chuyển hướng đến trang đăng nhập thành công
+                window.location.href = 'login_success.html';
+            } else {
+                alert('Tên đăng nhập hoặc mật khẩu không đúng!');
+            }
+        });
+    </script>
